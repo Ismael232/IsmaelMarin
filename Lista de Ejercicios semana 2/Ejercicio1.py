@@ -35,9 +35,9 @@ def personasMayores():
  ## MENU DE LA FUNCION PRINCIPAL
 
 print(""" *******MENU********
-        1.
-        2.
-        3.""")
+        1.Cuadrado
+        2.Numero par
+        3.Personas mayores""")
 opcion = input("Elija una opcion: ")
 if opcion == "1":
    dibujoCuadrado()

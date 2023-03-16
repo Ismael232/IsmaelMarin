@@ -33,7 +33,6 @@ def ingresarNuevoUsuario():
         respuesta = input("Desea agregar mas datos? [Si/No]: ")
         if respuesta.upper() == "NO":
             break
-    print(biblioteca["usuario"])
 
 
 def listaCategorias():
@@ -88,6 +87,7 @@ biblioteca = {"nombre":"Biblioteca",
               "listaDeCategorias": listaCategorias,
               "listaNombreAutores": listaNombreAutores,
               "cambioDeEstado": cambioDeEstado,
+              "listaUsuarios": listaUsuarios
               }
 
 
@@ -96,5 +96,5 @@ biblioteca = {"nombre":"Biblioteca",
 #listaCategorias()
 #listaNombreAutores()
 #cambioDeEstado()
-ingresarNuevoUsuario()
-listaUsuarios()
+#ingresarNuevoUsuario()
+#listaUsuarios()

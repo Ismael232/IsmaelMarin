@@ -13,6 +13,6 @@ versiones de Lorem Ipsum.
 
 ##FUNCIONES DE STRING
 
-print(texto.find("Lorem"),"\n")
-print(texto.count("Lorem\n"))
-print(texto.title())
+print("Funcion buscar: ",texto.find("Lorem"),"\n")
+print("Funcion contar: ",texto.count("Lorem"),"\n")
+print("Funcion titulo: ",texto.title())

@@ -10,4 +10,4 @@ x = int(input("Escriba el primer valor: "))
 y = int(input("Escriba el segundo valor: "))
 
 valor = mayorValor(x,y)
-print(valor)
+print(f"El mayor valor es {valor}")
