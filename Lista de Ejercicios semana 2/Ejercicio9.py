@@ -57,7 +57,7 @@ def obtenerRol(usuario):
     return rol
 ####
 def agregarSede():
-    usuario=input("ingresa usuario")
+    usuario=input("ingresa usuario: ")
     rol=obtenerRol(usuario)
     if rol=='admin':
         sede=input("ingrese sede: ")
@@ -84,9 +84,11 @@ def agregarSedes():
             break
 
 def verSedes():
-    for i,sede in sistema["sedes"]:
-        print(sede['nombreSede'])
+    sedes = []
+    for i,sede in enumerate(sistema["sedes"]):
+        sedes.append(sede['nombreSede'])
     pass
+    print(sedes)
 #####
 def agregarProductos():
     pass
@@ -96,4 +98,5 @@ def cambiarStock():
 
 agregaruUsuarios()
 agregarSedes()
-#verSedes()
+verSedes()
+
