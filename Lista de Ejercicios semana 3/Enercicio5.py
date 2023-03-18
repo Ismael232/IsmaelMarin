@@ -5,10 +5,13 @@ finally imprimir “proceso terminado”
 import os
 try:
     from Ejercicio4 import Producto
+
 except Exception as E:
     print(f"El error fue: {E}")
+
 else:
     print(os.getcwd())
+    
 finally:
     print("Proceso terminado")
 
