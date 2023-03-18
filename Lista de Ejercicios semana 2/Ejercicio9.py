@@ -90,13 +90,52 @@ def verSedes():
     pass
     print(sedes)
 #####
+def agregarProducto():
+    nombreProducto=input("ingrese el nombre del producto: ")
+    stock=int(input("ingrese el stock: "))
+    while stock <= 0:
+        print("El valor para el stock no es valido")
+        stock=int(input("ingrese el stock: "))
+        if stock > 0:
+            break
+    precio=float(input("ingrese el precio: "))
+    while precio <= 0:
+        print("El valor de precio no es valido")
+        precio=float(input("ingrese el precio: "))
+        if precio > 0:
+            break
+    
+    dictProduc={
+        'nombre':nombreProducto,
+        'precio':precio,
+        'stock':stock
+    }
+    sistema['productos'].append(dictProduc)
+
 def agregarProductos():
-    pass
+    while True:
+        agregarProducto()
+        respuesta = input("Desea agregar otro producto? Si/No: ")
+        if respuesta.upper() == "NO":
+            break
 #####
 def cambiarStock():
-    pass
+    nombre = input("Nombre del producto: ")
+    comprobador = True
+    for i,valor in enumerate(sistema["productos"]):
+       if valor['nombre'] == nombre:
+           nuevoStock = int(input("Ingrese nuevo stock: "))
+           comprobador = False
+           if nuevoStock >= 0:
+               valor['stock'] = nuevoStock
+               break
+    if comprobador:
+        print("El producto no se encuentra") 
+           
+            
 
-agregaruUsuarios()
-agregarSedes()
-verSedes()
-
+#agregaruUsuarios()
+#agregarSedes()
+#verSedes()
+agregarProductos()
+cambiarStock()
