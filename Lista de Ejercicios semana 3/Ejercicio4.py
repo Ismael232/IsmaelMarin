@@ -19,7 +19,7 @@ class Producto:
         codigo = self.desfragmentandoCodigo()
         return f"El producto proviene de {codigo[0]} y del lote {codigo[1]}"
     
-producto1 = Producto("Camisa","Peru-0001-2013")
-print(producto1)
+#producto1 = Producto("Camisa","Peru-0002-2013")
+#print(producto1)
 
 
