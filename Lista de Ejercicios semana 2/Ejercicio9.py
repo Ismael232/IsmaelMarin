@@ -132,10 +132,8 @@ def cambiarStock():
     if comprobador:
         print("El producto no se encuentra") 
            
-            
-
 #agregaruUsuarios()
 #agregarSedes()
 #verSedes()
-agregarProductos()
-cambiarStock()
+#agregarProductos()
+#cambiarStock()
