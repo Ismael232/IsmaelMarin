@@ -1,5 +1,8 @@
 from Ejercicio2 import sorteo
 import os
+from datetime import datetime
+
+########################   EJERCICIO 2  ########################################
 """
 sort = sorteo(100,6)
 sort.sorteoNumeros()
@@ -7,6 +10,8 @@ print(sort.lista)
 """
 from Ejercicio3 import *
 
+########################   EJERCICIO 3  ########################################
+'''
 def borrarPantalla():
     os.system('cls' if os.name=='nt' else 'clear')
 
@@ -92,3 +97,18 @@ while True:
 
     if opcion == 3:
         break
+'''
+
+########################   EJERCICIO 4  ########################################
+
+from Ejercicio4 import Registro
+"""
+objeto = Registro()
+fecha = datetime.now()
+objeto.guardar(fecha.strftime('%d/%m/%Y %H:%M:%S')+ " - Maestra"+" - Ella esta cansada\n")
+objeto.guardar(fecha.strftime('%d/%m/%Y %H:%M:%S')+ " - Maestro"+" - Ella esta cansado\n")
+objeto.guardar(fecha.strftime('%d/%m/%Y %H:%M:%S')+ " - Maestras"+" - Ella esta cansadas")
+objeto.mostrar()
+"""
+
+########################   EJERCICIO 5  ########################################
