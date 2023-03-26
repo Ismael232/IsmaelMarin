@@ -9,5 +9,3 @@ class sorteo:
     def sorteoNumeros(self):
         for i in range(self.cantidad):
             self.lista.append(int(random.random()*self.valorMax+1))
-if __name__ == "__main__":
-    print("aaaaaaaaaaa")

@@ -112,3 +112,8 @@ objeto.mostrar()
 """
 
 ########################   EJERCICIO 5  ########################################
+import re 
+from Ejercicio5 import ValidarNumero
+
+numero = input("Ingrese el numero de telefono: ")
+ValidarNumero(numero)
