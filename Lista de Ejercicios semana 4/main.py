@@ -28,8 +28,8 @@ menuPokemon = """
         --------POKEMON-----------
         1)Listar pokemon
         2)Buscar pokemon
-        2)Atras
-        3)Salir
+        3)Atras
+        4)Salir
 """
 while True:
     print(menu)
@@ -73,15 +73,15 @@ while True:
         print(menuPokemon)
         opcion = int(input("Selecione una opcion: "))
         if opcion == 1:
-            data = pokedex()
-            lista = data['pokemon_entries']
-            for i,value in enumerate(lista):
-                nombre = value['pokemon_species']['name']
-                print(i,")",nombre)
+            pokeVariable = pokeclas()
+            pokeVariable.listar()
             input("Presione una tecla para volver al menu... ")
             borrarPantalla()
         if opcion == 2:
-            print("Funcion2")
+            data = pokedex()
+            pokeVariable = pokeclas()
+            nombre = input("Ingrese el nombre del pokemon: ")
+            pokeVariable.buscar(nombre)
             input("Presione una tecla para volver al menu... ")
             borrarPantalla()
         if opcion == 3:

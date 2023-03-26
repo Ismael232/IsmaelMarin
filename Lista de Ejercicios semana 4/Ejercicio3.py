@@ -26,3 +26,23 @@ class casaCambio:
     def venta(self,cantidadSoles):
         cantidadDollar = cantidadSoles/self.ventaActualizado
         return cantidadDollar
+
+class pokeclas:
+    data = pokedex()
+    def listar(self):
+        lista = self.data['pokemon_entries']
+        for i,value in enumerate(lista):
+            nombre = value['pokemon_species']['name']
+            print(i,")",nombre)
+    def buscar(self,nombre):
+        lista = self.data['pokemon_entries']
+        for i,valor in enumerate(lista):
+            if valor['pokemon_species']['name'] == nombre:
+                    print("¡Esta en la lista!")
+                    print(valor['pokemon_species']['name'], ",enlace: ",valor['pokemon_species']['url'])
+                    condicion = False
+                    break
+            else:
+                    condicion = True
+        if condicion:
+                print("El pokemon no esta en la lista")
