@@ -2,13 +2,20 @@ import sqlite3
 conexion = sqlite3.connect('base.db')
 cur = conexion.cursor()
 
-def createTable():
-    cur.execute("CREATE TABLE IF NOT EXISTS USER (id INTERGER, USERNAME TEXT, EMAIL TEXT)")
+def createTable(tabla):
+    cur.execute(f"CREATE TABLE IF NOT EXISTS {tabla} (id TEXT, USERNAME TEXT, TELF TEXT)")
     conexion.commit()
 
-def insertData(id,user,email):
-    cur.execute("insert into user values (?,?,?)",(id,user,email))
+def insertData(id,user,telf,tabla):
+    cur.execute(f"insert into {tabla} values (?,?,?)",(id,user,telf))
     conexion.commit()
 
-def showTable():
-    cur.execute("select * from USER")
+def showTable(tabla):
+    cur.execute(f"select * from {tabla}")
+    datos = cur.fetchall()
+    return  datos
+
+
+def insertDataToBase(nombreTabla,dataframe):
+    dataframe.to_sql(nombreTabla,conexion,if_exists = 'replace', index = False)
+    conexion.commit()

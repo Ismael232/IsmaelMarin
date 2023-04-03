@@ -1,4 +1,5 @@
 import pandas as pd
+import uuid
 from CapaModelo import *
 
 def opcion(option):
@@ -8,22 +9,42 @@ def opcion(option):
             rutaMejorada = r'{}'.format(ruta)
             hoja = input("Indique el nombre de la hoja: ")
             df = cargarArchivo(rutaMejorada,hoja)
-            decision = input("Desea agregar una columna de precio total?[s/n]")
-            if decision.upper() == "S":
-                agregarPrecioTotal(df,hoja)
-            else:
-                print("No se realizaron cambios")
+            agregarPrecioTotal(df,hoja)
             print(df)
+            return True
         case 2:
-            pass
+            nombreExcel = input("Escribe el nombre del archivo excel: ")
+            dataframe = pd.read_excel(nombreExcel)
+            nombreTabla = input("Escriba el nombre de la tabla a crear: ")
+            insertDataToBase(nombreTabla,dataframe)
+            print("La informacion de la base es: ")
+            datos = showTable(nombreTabla)
+            for filas in datos:
+                print(filas)
+            return True
         case 3:
-            break
+            nombreTabla = input("Indique el nombre de la tabla donde se almacenara: ")
+            createTable(nombreTabla)
+            cantidad = int(input("Cuantas filas agregara? "))
+            i = 0
+            while i < cantidad:
+                id = uuid.uuid4()
+                idtext = str(id)
+                print(f"USIARIO {i+1}\n")
+                nombre = input("Escriba nombre de usuario: ")
+                telefono = input("Ingrese el telefono: ")
+                insertData(idtext,nombre,telefono,nombreTabla)
+                i+=1
+            return True
+
+        case 4:
+            return False
         case _:
             print("Opcion no valida")
+            return True
 
 def cargarArchivo(ruta,hoja):
     df_excel = pd.read_excel(ruta,sheet_name=hoja)
-    print(df_excel)
     return df_excel
 
 def agregarPrecioTotal(dataframe,hoja):
