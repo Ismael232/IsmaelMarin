@@ -3,7 +3,7 @@ conexion = sqlite3.connect('base.db')
 cur = conexion.cursor()
 
 def createTable(tabla):
-    cur.execute(f"CREATE TABLE IF NOT EXISTS {tabla} (id TEXT, USERNAME TEXT, TELF TEXT)")
+    cur.execute(f"CREATE TABLE IF NOT EXISTS {tabla} (id INTERGER, USERNAME TEXT, TELF TEXT)")
     conexion.commit()
 
 def insertData(id,user,telf,tabla):
